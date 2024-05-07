@@ -1,0 +1,361 @@
+[
+    {
+        "provincia": "Cataluña",
+        "lugar": "Siurana",
+        "url_sectores": "./assets/Siurana.jpg",
+        "sector": "La Siuranella Central",
+        "via": "La Rambla",
+        "grado_dificultad": "9a+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "Cancho Amarillo",
+        "via": "Valentina",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "Las Rocas",
+        "via": "La Belén",
+        "grado_dificultad": "6c"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Torrelodones",
+        "sector": "La Tortuga",
+        "via": "La Cosa",
+        "grado_dificultad": "6a+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "El Yelmo",
+        "via": "Directísima",
+        "grado_dificultad": "6c"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "El Hueso",
+        "via": "La Nueva Normal",
+        "grado_dificultad": "5c"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Torrelodones",
+        "url_sectores": "./assets/torrelodones.jpg",
+        "sector": "El Dedo de Dios",
+        "via": "Dedo de Dios",
+        "grado_dificultad": "6b+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "El Gallinero",
+        "via": "El Oso y el Madroño",
+        "grado_dificultad": "7b"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "La Pared de Santillana",
+        "via": "El Gran Diedro",
+        "grado_dificultad": "6a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "La Aguja",
+        "via": "La Raja",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "La Mocha",
+        "via": "Pancha y Punta",
+        "grado_dificultad": "6c+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "Las Torres",
+        "via": "La Directa",
+        "grado_dificultad": "6b"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Torrelodones",
+        "sector": "La Peña del Arcipreste",
+        "url_sectores": "./assets/torrelodones.jpg",
+        "via": "El Divino",
+        "grado_dificultad": "6c"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "El Pan de Kilo",
+        "via": "Cuerda Larga",
+        "grado_dificultad": "6a+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Torrelodones",
+        "url_sectores": "./assets/torrelodones.jpg",
+        "sector": "El Pino",
+        "via": "El Pino",
+        "grado_dificultad": "6a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "La Pancha",
+        "via": "El Canelón",
+        "grado_dificultad": "6c+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "El Tolmo",
+        "via": "El Espolón",
+        "grado_dificultad": "6b"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "Las Cuevas",
+        "via": "El Cubo",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Torrelodones",
+        "url_sectores": "./assets/torrelodones.jpg",
+        "sector": "El Centinela",
+        "via": "Vía Láctea",
+        "grado_dificultad": "6b+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "La Raja",
+        "via": "La Raja",
+        "grado_dificultad": "7b+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "La Cueva",
+        "via": "El Camino del Indio",
+        "grado_dificultad": "6b"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "El Risco de la Peseta",
+        "via": "El Canto del Loco",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "El Castillo",
+        "via": "La Chimenea",
+        "grado_dificultad": "6a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Torrelodones",
+        "url_sectores": "./assets/torrelodones.jpg",
+        "sector": "La Campana",
+        "via": "Sonata",
+        "grado_dificultad": "6b+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "El Pájaro",
+        "via": "El Diedro",
+        "grado_dificultad": "6c"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "Las Cuevas",
+        "via": "El Espolón",
+        "grado_dificultad": "7a+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "El Dedo",
+        "via": "El Dedo",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Torrelodones",
+        "url_sectores": "./assets/torrelodones.jpg",
+        "sector": "El Pino",
+        "via": "El Fénix",
+        "grado_dificultad": "6c+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "El Humo",
+        "via": "El Rayo",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "El Trave",
+        "via": "La Directa",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Torrelodones",
+        "url_sectores": "./assets/torrelodones.jpg",
+        "sector": "La Peña de la Buho",
+        "via": "La Pasión",
+        "grado_dificultad": "6b"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "La Cueva de la Mora",
+        "via": "El Enigma",
+        "grado_dificultad": "6c+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "La Pedriza",
+        "url_sectores": "./assets/Pedriza.jpg",
+        "sector": "El Hueso",
+        "via": "El Hueso",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Torrelodones",
+        "url_sectores": "./assets/torrelodones.jpg",
+        "sector": "El Pinar",
+        "via": "El Pinar",
+        "grado_dificultad": "6a+"
+    },
+    {
+        "provincia": "Madrid",
+        "lugar": "Patones",
+        "url_sectores": "./assets/Patones.jpg",
+        "sector": "El Gallinero",
+        "via": "El Gallinero",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "Los Delfines",
+        "via": "Hombres y mujeres",
+        "grado_dificultad": "7c+"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "El Paredón",
+        "via": "La Leyenda Continúa",
+        "grado_dificultad": "8a+"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "La Cueva de la Araña",
+        "via": "Ojos Rojos",
+        "grado_dificultad": "7b"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "El Rincón de los Jubilados",
+        "via": "Gabriela",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "El Oasis",
+        "via": "Sol y sombra",
+        "grado_dificultad": "6b+"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "Las Torcas",
+        "via": "Desafío Vertical",
+        "grado_dificultad": "7c"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "El Callejón",
+        "via": "Techo Manía",
+        "grado_dificultad": "8b"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "Las Tablas",
+        "via": "De Perdidos al Río",
+        "grado_dificultad": "6c"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "El Castillo",
+        "via": "La Chica Dorada",
+        "grado_dificultad": "7a"
+    },
+    {
+        "provincia": "Cuenca",
+        "lugar": "Hoces de Cuenca",
+        "url_sectores": "./assets/cuenca.jpg",
+        "sector": "El Colegio",
+        "via": "El Callejón",
+        "grado_dificultad": "7b+"
+    }
+]
