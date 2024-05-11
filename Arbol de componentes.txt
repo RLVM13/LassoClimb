@@ -1,0 +1,22 @@
+Arbol de componentes de la aplicacion que vamos a desarrollar sujeta a cambios
+
+App --> App.jsx
+    Header --> Header.jsx
+        Logo
+        Nav
+            Link*3
+            LogButton
+        MiMain
+            ClimbList --> Climb.jsx <section>
+                RouteItem --> RouteItem.jsx <article>
+                RouteItem 
+                RouteItem 
+            SideInfo --> SideInfo.jsx <aside>
+                SideCard --> SideCard.jsx <article>
+                SideCard 
+                SideCard 
+                
+        Footer --> Footer.jsx <footer>
+
+
+
