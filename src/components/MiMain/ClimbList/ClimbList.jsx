@@ -25,9 +25,9 @@ function ClimbList() {
                 const resp = await axios.get('http://localhost:3000/api/routes');
                 const json = await resp.data;
                 console.log(json);
-                setVias(json); // Guarda en el array de vias el resultado. Procesa los datos
+                setList(json); // Guarda en el array de vias el resultado. Procesa los datos
             } catch (e) {
-                setVias([]); //Si hay error, no pintas nada
+                setList(); //Si hay error, no pintas nada
             }
         }
         getVias(); //llamamos a la funcion que conecta y traer datos
@@ -39,10 +39,10 @@ function ClimbList() {
                 key={index}
                 provincia={item.provincia}
                 lugar={item.lugar}
-                url_sectores={item.url_sectores}
+                image_url={item.image_url}
                 sector={item.sector}
                 via={item.via}
-                grado_dificultad={item.grado_dificultad}
+                grado={item.grado}
                 favorito={() => favorito(index)}
                 encadenar={() => encadenar(index)} //Le pasamos por props la funcion al hijo
             />

@@ -1,23 +1,31 @@
 const express = require('express');
+
+//INICIALIZAR SERVER
 const app = express();
 const port = 3000;
 
 require('dotenv').config();
-const datos = require('../server/utils/datos');
+const datos = require('../server/utils/datos.js'); //DATOS EN LOCAL
 
-// Rutas
-const apiRoutes = require("./routes/api.routes")
+//SOLUCIONAR PROBLEMA DE CORS 
+const cors= require("cors");
+app.use(cors());
+
+// FICHEROS DE RUTAS
+const apiRoutes = require("./routes/api.routes");
+const pool = require('../server/config/db_pgsql.js');
 
 app.use(express.json()); // Habilito recepción de JSON en servidor
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); //ENVIO DE FORMULARIOS
 
 app.get('/hello', (req, res) => {
     res.send('Hello World!')
 })
 
-app.get('/api/routes', (req, res)=>{
-    res.json(datos);
+/* app.get('/api/routes', (req, res)=>{
+    res.json(pool);
    });
+ */
 
 // Rutas API
 app.use('/api', apiRoutes);

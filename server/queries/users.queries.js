@@ -16,12 +16,11 @@ const usuariosQueries = {
 
     /* -- Editar datos en tabla usuarios */
     actualizarUsuario: `UPDATE users
-        SET isadmin=$1, 
+        SET isAdmin=$1, 
             username=$2, 
             nombre=$3, 
             apellidos=$4,
-            password= $5,
-        WHERE email=$6;`,
+        WHERE email=$5;`,
 
     /* -- para buscar al usuario y poder buscarlo por foreing */
     buscarUsuarioEmail: `SELECT user_id FROM usuarios WHERE email=$1`,

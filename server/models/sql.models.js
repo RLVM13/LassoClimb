@@ -72,7 +72,7 @@ const getUserByEmail = async (email) => {
   let client, result;
   try {
     client = await pool.connect();
-    const data = await client.query(queries.buscarUsuarioEmail, [email]);
+    const data = await client.query(queriesUsers.buscarUsuarioEmail, [email]);
     result = data.rows;
   } catch (err) {
     console.log(err);
@@ -88,7 +88,7 @@ const deleteUserApi = async (email) => {
   let client, result;
   try {
     client = await pool.connect();
-    const data = await client.query(queries.borrarUsuario, [email]);
+    const data = await client.query(queriesUsers.borrarUsuario, [email]);
     result = data.rows;
   } catch (err) {
     console.log(err);
@@ -104,23 +104,16 @@ const deleteFavouriteApi = async (email) => {
   let client, result;
   try {
     client = await pool.connect();
-    const data = await client.query(queries.borrarFavoritosUsuario, [email]);
+    const data = await client.query(queriesUsers.borrarFavoritosUsuario, [email]);
     result = data.rows;
   } catch (err) {
-      console.log(err);
+    console.log(err);
     throw err;
   } finally {
-      client.release();
+    client.release();
   }
   return result;
 };
-
-/* {
-  "user_id": "cervantes@email.com",
-  "title": "Diseñaré un sitio web creativo y único",
-  "anuncio_id": 2,
-  "path": "https://es.fiverr.com/hipinspire/design-creative-and-unique-website?context_referrer=subcategory"
-} */
 
 const createFavorite = async (favorite) => {
   const { user_id, title, anuncio_id, path } = favorite;
@@ -135,10 +128,63 @@ const createFavorite = async (favorite) => {
     ]);
     result = data.rowCount;
   } catch (err) {
-      console.log(err);
+    console.log(err);
     throw err;
   } finally {
-      client.release();
+    client.release();
+  }
+  return result;
+};
+
+const createRoute = async (route) => {
+  const { provincia, lugar, sector, via, grado, image_url } = route;
+  let client, result;
+  try {
+    client = await pool.connect();
+    const data = await client.query(queriesRoutes.insertarRuta, [
+      provincia,
+      lugar,
+      sector,
+      via,
+      grado,
+      image_url
+    ]);
+    result = data.rowCount;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    client.release();
+  }
+  return result;
+};
+
+const getAllRoutes = async () => {
+  let client, result;
+  try {
+    client = await pool.connect();
+    const data = await client.query(queriesRoutes.mostrarRutas, []);
+    result = data.rows;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    client.release();
+  }
+  return result;
+};
+
+const getRoute = async () => {
+  let client, result;
+  try {
+    client = await pool.connect();
+    const data = await client.query(queriesRoutes.mostrarRuta, []);
+    result = data.rows;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    client.release();
   }
   return result;
 };
@@ -146,8 +192,11 @@ const createFavorite = async (favorite) => {
 const apiModels = {
   createUser,
   createFavorite,
+  createRoute,
   editUserApi,
   getUserByEmail,
+  getAllRoutes,
+  getRoute,
   deleteUserApi,
   deleteFavouriteApi
 }
