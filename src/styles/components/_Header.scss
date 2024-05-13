@@ -1,0 +1,18 @@
+@import '../utils/variables.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 6vh;
+    width: 100%;
+    background-color: $yellow_green;
+    padding: 12px;
+
+    &>div {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+}

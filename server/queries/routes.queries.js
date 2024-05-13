@@ -17,6 +17,8 @@ const routesQueries = {
 
     mostrarRuta: `SELECT provincia, lugar, sector, via, grado, image_url FROM routes WHERE via=$1;`,
 
+    buscarRuta: `SELECT provincia, lugar, sector, via, grado, image_url FROM routes WHERE provincia=$1;`,
+
     /* -- Eliminar datos en tabla de rutas*/
     borrarRuta: `DELETE FROM routes WHERE user_id=(SELECT user_id FROM users WHERE email=$1);`,
 }

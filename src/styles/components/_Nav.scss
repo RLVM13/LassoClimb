@@ -1,0 +1,9 @@
+.nav {
+
+    &>ul {  //selectores anidados
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        gap:20px;
+    }
+}

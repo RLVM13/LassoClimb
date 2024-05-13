@@ -123,6 +123,18 @@ const getRoute = async (req, res) => {
     }
 }
 
+const getSearch = async (req, res) => {
+    console.log(req.query.search);
+    const busqueda = req.query.search;
+    if (busqueda) {
+        let resultado = await modelos.getBuscador({ titulo: { $regex: titulo, $options: 'i' } }, '-id, -__v');
+        res.status(200).json(resultado);
+    }
+    else {
+        res.status(400).send("problemas");
+    }
+}
+
 const updateRoute = async (req, res) => {
     try {
         const route = await modelos.update(req.body, {
@@ -144,6 +156,7 @@ module.exports = {
     getAllRoutes,
     getRoute,
     updateRoute,
+    getSearch,
 
     createFavorite,
     deleteFavorite,

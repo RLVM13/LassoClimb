@@ -19,6 +19,9 @@ router.get("/routes/", apiController.getAllRoutes);
 router.get("/routes/:via", apiController.getRoute);
 router.put("/routes/:via",apiController.updateRoute);
 
+// http://localhost:3000/api/search/
+router.get("/search", apiController.getSearch);
+
 
 //ESTA EXPORTANDO EL PAQUETE DE RUTAS QUE SE HA PREPARADO
 module.exports = router;

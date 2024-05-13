@@ -189,6 +189,21 @@ const getRoute = async () => {
   return result;
 };
 
+const getBuscador = async () => {
+  let client, result;
+  try {
+    client = await pool.connect();
+    const data = await client.query(queriesRoutes.buscarRuta, []);
+    result = data.rows;
+  } catch (err) {
+    console.log(err);
+    throw err;
+  } finally {
+    client.release();
+  }
+  return result;
+};
+
 const apiModels = {
   createUser,
   createFavorite,
@@ -197,6 +212,7 @@ const apiModels = {
   getUserByEmail,
   getAllRoutes,
   getRoute,
+  getBuscador,
   deleteUserApi,
   deleteFavouriteApi
 }

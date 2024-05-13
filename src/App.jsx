@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom' //enrutamiento SPA
-//import './styles/styles.scss' //sustituimos app.css
+import './styles/styles.scss' //sustituimos app.css
 import Footer from './components/Footer'
 import Header from './components/Header'
 import MiMain from './components/MiMain'
