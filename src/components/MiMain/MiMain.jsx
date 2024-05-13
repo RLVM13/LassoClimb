@@ -11,7 +11,7 @@ import Topic from './Topic' */
 
 function MiMain() {
   return (
-    <main>
+    <main className="main">
       <Routes>
         {/* <Route path='/' element={<Home />} /> */}
         <Route path='/climblist' element={<ClimbList />} />

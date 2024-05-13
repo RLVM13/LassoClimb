@@ -22,11 +22,6 @@ app.get('/hello', (req, res) => {
     res.send('Hello World!')
 })
 
-/* app.get('/api/routes', (req, res)=>{
-    res.json(pool);
-   });
- */
-
 // Rutas API
 app.use('/api', apiRoutes);
 

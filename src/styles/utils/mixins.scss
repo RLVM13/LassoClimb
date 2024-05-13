@@ -1,0 +1,5 @@
+@mixin centered-column-layout { //reutilizacion de codigo de estilos
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

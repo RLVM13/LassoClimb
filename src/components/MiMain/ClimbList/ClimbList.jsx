@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'; /* rfce te crea la estructura basica*/
 import RouteItem from './RouteItem/RouteItem.jsx';
 import axios from 'axios'
+import { MagicMotion } from "react-magic-motion";
 
 function ClimbList() {
     //Todo lo que quieras que haga, se debe poner antes del "Return", por ejemplo la creación de objeto
 
     //Estado inicial
     const [list, setList] = useState([]); // [{},{},{}] lista de items
-    const [vias, setVias] = useState(""); //Filtro de vias
+    const [location, setLocation] = useState(""); //Filtro de vias
 
     const [values, setValues] = useState({ //nuevo estado de "Values"
         provincia: "",
@@ -34,7 +35,7 @@ function ClimbList() {
     }, []); // Se ejecuta la primera vez que se renderiza el componente
 
     const paintItems = () =>
-        list.map((item, index) => (
+        list.filter(list => list.provincia == location).map((item, index) => (
             <RouteItem
                 key={index}
                 provincia={item.provincia}
@@ -47,7 +48,7 @@ function ClimbList() {
                 encadenar={() => encadenar(index)} //Le pasamos por props la funcion al hijo
             />
         ));
-
+        
     const favorito = (pos) => {
         alert("Favorito Agregado");
     }
@@ -60,20 +61,20 @@ function ClimbList() {
         e.preventDefault();
         console.log(e.target.buscar.value);
         setValues(e.target.buscar.value); // Modificando el estado de Value
-        fetchData(e.target.buscar.value);
+        setLocation(e.target.buscar.value);
     };
 
-    async function fetchData(location) {
+    /* async function fetchData(location) {
         console.log(location);
         try {
             console.log("ddrgddrydry");
             // Petición HTTP
             //http://localhost:3000/api/vias?location={location}
-            const res = await axios.get(vias); //TU ENDPOINT API AQUI
-            const json = res.data;
+            /* const res = await axios.get(`http://localhost:3000/api/search/provincia={location}`); //TU ENDPOINT API AQUI
+            const json = res.data; */
             // Guarda en el array de vias el resultado. Procesa los datos
             // Crea array falso con 2 vias de madrid
-            const arrayFalso = [
+            /* const arrayFalso = [
                 {
                     "provincia": "Madrid",
                     "lugar": "La Pedriza",
@@ -90,17 +91,47 @@ function ClimbList() {
                     "via": "La Cosa",
                     "grado_dificultad": "6a+"
                 }
-            ];
+            ]; 
             // sobreescribir el objeto guardado en vias con las nuevas vias -- arreglar logica
+            const filtrado = list.filter(list => list.provincia == location);
+            console.log(filtrado);
+            setVias(filtrado);
+            setList(filtrado);
+            paintItems();
+
             setVias(json.data.children.filter(c => c.data));
         } catch (e) {
             setVias([]) // No pintes nada 
         }
+    } */
 
+    
+  /*   function search(items) {
+        return items.filter((item) => {
+            if (item.region == filterParam) {
+                return searchParam.some((newItem) => {
+                    return (
+                        item[newItem]
+                            .toString()
+                            .toLowerCase()
+                            .indexOf(q.toLowerCase()) > -1
+                    );
+                });
+            } else if (filterParam == "All") {
+                return searchParam.some((newItem) => {
+                    return (
+                        item[newItem]
+                            .toString()
+                            .toLowerCase()
+                            .indexOf(q.toLowerCase()) > -1
+                    );
+                });
+            }
+        });
     }
-
+ */
     return (
-        <section>
+        <section classname="climb-list">
             <form onSubmit={handleSubmit}>
                 <input type="text" name="buscar" placeholder="Buscar..." />
                 <button type="submit">Search</button>
