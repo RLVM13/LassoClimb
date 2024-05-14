@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 
 function RouteItem({provincia, lugar, image_url, sector, via, grado, favorito, encadenar }) { //eliminamos props y podemos usar las variabnles entre llaves
   return (
@@ -16,4 +16,4 @@ function RouteItem({provincia, lugar, image_url, sector, via, grado, favorito, e
   )
 }
 
-export default RouteItem
+export default RouteItem */

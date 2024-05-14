@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'; /* rfce te crea la estructura basica*/
-import RouteItem from './RouteItem/RouteItem.jsx';
-import axios from 'axios'
+import React, { useState, useRef, useEffect } from 'react'; /* rfce te crea la estructura basica*/
+import CardItem from '../Card';
+import axios from 'axios';
+
 import { MagicMotion } from "react-magic-motion";
 
 function ClimbList() {
@@ -9,6 +10,7 @@ function ClimbList() {
     //Estado inicial
     const [list, setList] = useState([]); // [{},{},{}] lista de items
     const [location, setLocation] = useState(""); //Filtro de vias
+    const [viaNueva, setviaNueva] = useState([]); // [{},{},{}] lista de items
 
     const [values, setValues] = useState({ //nuevo estado de "Values"
         provincia: "",
@@ -18,6 +20,8 @@ function ClimbList() {
         via: "",
         grado_dificultad: ""
     })
+
+    const titleRef = useRef(""); // Referencia al input title 
 
     // useEffect [] para hacer la carga inicial de la API
     useEffect(() => {
@@ -34,9 +38,18 @@ function ClimbList() {
         getVias(); //llamamos a la funcion que conecta y traer datos
     }, []); // Se ejecuta la primera vez que se renderiza el componente
 
-    const paintItems = () =>
-        list.filter(list => list.provincia == location).map((item, index) => (
-            <RouteItem
+
+    const paintItems = () => {
+
+        let filtered_list = [];
+        if (location !== "") {
+            filtered_list = list.filter(list => list.provincia == location)
+        } else {
+            filtered_list = list;
+        }
+
+        return filtered_list.map((item, index) => (
+            <CardItem
                 key={index}
                 provincia={item.provincia}
                 lugar={item.lugar}
@@ -48,13 +61,6 @@ function ClimbList() {
                 encadenar={() => encadenar(index)} //Le pasamos por props la funcion al hijo
             />
         ));
-        
-    const favorito = (pos) => {
-        alert("Favorito Agregado");
-    }
-
-    const encadenar = (pos) => {
-        alert("Enhorabuena por completar tu objetivo !!");
     }
 
     const handleSubmit = e => {
@@ -62,83 +68,73 @@ function ClimbList() {
         console.log(e.target.buscar.value);
         setValues(e.target.buscar.value); // Modificando el estado de Value
         setLocation(e.target.buscar.value);
+        e.target.buscar.value = "";
     };
 
-    /* async function fetchData(location) {
-        console.log(location);
-        try {
-            console.log("ddrgddrydry");
-            // Petición HTTP
-            //http://localhost:3000/api/vias?location={location}
-            /* const res = await axios.get(`http://localhost:3000/api/search/provincia={location}`); //TU ENDPOINT API AQUI
-            const json = res.data; */
-            // Guarda en el array de vias el resultado. Procesa los datos
-            // Crea array falso con 2 vias de madrid
-            /* const arrayFalso = [
-                {
-                    "provincia": "Madrid",
-                    "lugar": "La Pedriza",
-                    "url_sectores": "https://d3byf4kaqtov0k.cloudfront.net/p/gallery/lpsmrdak.webp",
-                    "sector": "Cancho Amarillo",
-                    "via": "Valentina",
-                    "grado_dificultad": "7a"
-                },
-                {
-                    "provincia": "Madrid",
-                    "lugar": "Torrelodones",
-                    "url_sectores": "https://d3byf4kaqtov0k.cloudfront.net/p/gallery/la2fm1o1.webp",
-                    "sector": "La Tortuga",
-                    "via": "La Cosa",
-                    "grado_dificultad": "6a+"
-                }
-            ]; 
-            // sobreescribir el objeto guardado en vias con las nuevas vias -- arreglar logica
-            const filtrado = list.filter(list => list.provincia == location);
-            console.log(filtrado);
-            setVias(filtrado);
-            setList(filtrado);
-            paintItems();
+    const handleSubmit2 = e => {
+        alert("Crear vía en la BBDD")
+        e.preventDefault();
+        const via = titleRef.current.value; // e.target.title.value; pero accede por referencia
+        const sector = e.target.sector.value;
+        const lugar = e.target.lugar.value;
+        const provincia = e.target.provincia.value;
+        const url = e.target.img_url.value;
 
-            setVias(json.data.children.filter(c => c.data));
-        } catch (e) {
-            setVias([]) // No pintes nada 
-        }
-    } */
+        const item = { via, sector, lugar, provincia, url }; // Nuevo objeto destino
+        setList([item, ...list]); // Añade el nuevo destino a la lista al principio
+        console.log("*******");
+        console.log(item);
+        console.log(viaNueva);
 
-    
-  /*   function search(items) {
-        return items.filter((item) => {
-            if (item.region == filterParam) {
-                return searchParam.some((newItem) => {
-                    return (
-                        item[newItem]
-                            .toString()
-                            .toLowerCase()
-                            .indexOf(q.toLowerCase()) > -1
-                    );
-                });
-            } else if (filterParam == "All") {
-                return searchParam.some((newItem) => {
-                    return (
-                        item[newItem]
-                            .toString()
-                            .toLowerCase()
-                            .indexOf(q.toLowerCase()) > -1
-                    );
-                });
-            }
+        // Probando el uso de useRef
+        console.log(titleRef.current.value);
+        titleRef.current.value = "";
+        console.log("-----");
+        console.log(titleRef.current.value);
+
+        //limpiar
+        titleRef.current.value = "";
+        e.target.sector.value = "";
+        e.target.lugar.value = "";
+        e.target.provincia.value = "";
+        e.target.img_url.value = "";
+    };
+
+    const handleChange = (e) => {
+        console.log(e.target.name, e.target.value);
+        setValues({
+            ...values,
+            [e.target.name]: e.target.value,
         });
+    };
+
+    const crearVia = () => {
+        alert("Crear Vía");
     }
- */
+
     return (
-        <section classname="climb-list">
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="buscar" placeholder="Buscar..." />
-                <button type="submit">Search</button>
+        <section className="climb-list">
+            <form onSubmit={handleSubmit} className="buscador">
+                <input type="text" name="buscar" placeholder="Escribe una provincia..." />
+                <button type="submit">Search</button><br /><br />
             </form>
 
-            <h2>Éste es el listado de Vías</h2>
-            {paintItems()}
+            <form onSubmit={handleSubmit2} className="form">
+                <div>
+                    <input type="text" name="via" placeholder="Vía" onChange={handleChange} ref={titleRef} />
+                    <input type="text" name="sector" placeholder="Sector" onChange={handleChange} />
+                    <input type="text" name="lugar" placeholder="Lugar" onChange={handleChange} />
+                    <input type="text" name="provincia" placeholder="Provincia" onChange={handleChange} />
+                    <input type="url" name="img_url" placeholder="Url de la imagen" onChange={handleChange} />
+                </div>
+                {values.via ?
+                    <button onClick={crearVia}>Crear Vía</button>
+                    : <></>}
+            </form>
+            <br /><h2>Éste es el listado de Vías</h2><br />
+            <section>
+                {paintItems()}
+            </section>
         </section>
     );
 }
