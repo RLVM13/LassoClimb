@@ -1,7 +1,7 @@
-import React from "react";
+/* import React from "react";
 
 const About = () => {
-  return <main>About Climb
+  return <main className="main">
     <h3>¿Qué es la escalada?</h3>
       <p>La escalada es una actividad que consiste en realizar ascensos sobre paredes, valiéndose de la fuerza física propia.
         Se considera escalada todo ascenso con las extremidades inferiores (pies y piernas; en algunos casos también se podría
@@ -31,4 +31,4 @@ const About = () => {
   </main>;
 };
 
-export default About;
+export default About; */

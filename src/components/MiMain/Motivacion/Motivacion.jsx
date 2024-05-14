@@ -1,9 +1,8 @@
 import React from "react";
 
 const Motivacion = () => {
-  return <nav> Motivación 
-  <ul>
-    <li>Vídeos</li><br />
+  return <nav>
+  <ul><br />
     <a href="https://en.wikipedia.org/wiki/Bear%27s_Reach">Bear's Reach</a><br />
     <iframe width="560" height="315" src="https://www.youtube.com/embed/Q7GHzGchGWg?si=_XdK23-WuLmzwe1R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br /><br />
     <a href="https://woguclimbing.com/chris-sharma-es-pontas-gran-arco-dificultad-psicobloc-mallorca/">Psycobloc - Es Pontàs</a><br />

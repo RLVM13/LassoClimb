@@ -4,4 +4,9 @@
     height: 8vh;
     background-color: $yellow_green;
     width: 100%;
+    font-size: 12px;
+    text-align: center;
+    &>div>p{
+        color:black;
+    }
 }

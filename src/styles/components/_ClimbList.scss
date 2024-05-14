@@ -1,6 +1,19 @@
 @import '../utils/mixins.scss'; 
 
 .climb-list{
-    @include centered-column-layout
+    @include centered-column-layout;
+    
+    &>section{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap:16px;
+        &>div{
+            min-width: 240px;
+        }
+    }
+}
 
+.buscador{
+    padding:20px;
 }

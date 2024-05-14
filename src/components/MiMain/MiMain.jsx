@@ -3,21 +3,18 @@ import React from 'react'
 import ClimbList from './ClimbList'
 import Motivacion from './Motivacion'
 import Contact from './Contact'
-import About from './About'
-/* import Home from './Home'
-import Staff from './Staff'
-import SummerCourse from './SummerCourse'
-import Topic from './Topic' */
+/* import About from './About' */
+import Home from './Home'
 
 function MiMain() {
   return (
     <main className="main">
       <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
+        <Route path='/' element={<Home />} />
         <Route path='/climblist' element={<ClimbList />} />
         <Route path='/motivacion' element={<Motivacion />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/about' element={<About />} />
+       {/*  <Route path='/about' element={<About />} /> */}
         {/* <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/staff' element={<Staff />} />

@@ -50,10 +50,11 @@ const Contact = () => {
   }, [nombre])
   
   return(
-      <form className="mt-4" onSubmit={handleSubmit} >
+      <form className="form" onSubmit={handleSubmit}>
+        <h2>Contacta con nosotros</h2><br />
           <input type="text" name='nombre' placeholder='Nombre' onChange={handleChange}/><br />
           <input type="email" name='email' placeholder='Email'/><br />
-          <textarea name="comentarios" placeholder='Comentarios' /><br />
+          <textarea name="comentarios" placeholder='Comentarios' width="165px" height="100px" /><br />
           <button type='submit' >Enviar</button>
       </form>
 
